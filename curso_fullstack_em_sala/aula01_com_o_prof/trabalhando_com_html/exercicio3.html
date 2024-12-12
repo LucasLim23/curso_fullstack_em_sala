@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jogo da advinhação</h1>
+    <p>Digite um número de 1 a 100:</p>
+    <input type="number" id="numero" min="0" max="100" required>
+    <br>
+    <br>
+    <button type="button" onclick="numeroAdvinhado()">Gerar</button>
+    <p id="resultado"></p>
+    <script>
+        function numeroAdvinhado(){
+            const numero = parseInt(document.getElementById("numero").value);
+            const resultado = document.getElementById("resultado");
+            const numeroAleatorio = Math.floor(Math.random()*101);
+
+            if(isNaN(numero) || numero < 0 || numero > 100){
+                resultado.innerText="Por favor, insira um número válido de 0 a 100";
+                return;
+            }
+            if(numero < numeroAleatorio){
+                resultado.innerText="Seu número é menor que o número gerado";
+                return;
+            }else if(numero >numeroAleatorio){
+                resultado.innerText="Seu número é maior que o número gerado";
+                return;
+            }else{
+                resultado.innerText="Parabéns você acertou o número!!";
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

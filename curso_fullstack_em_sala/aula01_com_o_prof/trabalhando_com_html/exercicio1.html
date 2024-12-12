@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Média</title>
+</head>
+<body>
+    <h1>Calcule a média:</h1>
+    <form>
+        <p>Digite sua primeira nota:</p>
+        <input type="number" id="nota1" required>
+        <br>
+        <p>Digite sua segunda nota:</p>
+        <input type="number" id="nota2" required>
+        <p>Digite sua terceita nota:</p>
+        <input type="number" id="nota3" required>
+        <br>
+        <p>Digite sua quarta nota:</p>
+        <input type="number" id="nota4" required>
+        <br>
+        <p>Calcule sua média:</p>
+        <button type="button" onclick="calcularmedia()">Calcular média</button>
+    </form>
+    <p id="resultado">Resultado</p>
+    <script>
+        function calcularmedia(){
+            const nota1=parseFloat(document.getElementById("nota1").value);
+            const nota2=parseFloat(document.getElementById("nota2").value);
+            const nota3=parseFloat(document.getElementById("nota3").value);
+            const nota4=parseFloat(document.getElementById("nota4").value);
+
+            if(!isNaN(nota1) && !isNaN(nota2) && !isNaN(nota3) && !isNaN(nota4)){
+                const media = (nota1+nota2+nota3+nota4)/4;
+                if(media>=7){
+                    document.getElementById("resultado").innerText=`Aluno Aprovado com media ${media}`;
+                }else{
+                    document.getElementById("resultado").innerText=`Aluno Reprovado com media ${media}`;
+                }
+            }else{
+                document.getElementById("resultado").innerText="Por favor, insira novamente os valores para obter as notas!";
+            }
+        }
+    </script>
+</body>
+</html>

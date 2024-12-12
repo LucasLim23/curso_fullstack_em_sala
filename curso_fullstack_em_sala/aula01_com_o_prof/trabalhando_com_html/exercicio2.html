@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificação de número primo</h1>
+    <br>
+    <p>Digite um número: </p>
+    <input type="number" id="numero" required>
+    <br>
+    <br>
+    <button type="button" onclick="calcularPrimo()">Calculo</button>
+    <p id="resultado"></p>
+    <script>
+        function calcularPrimo(){
+            const numero = parseFloat(document.getElementById("numero").value);
+            const resultado = document.getElementById("resultado");
+            if(isNaN(numero)){
+                resultado.innerText="Por favor insira um número válido";
+                return;
+            }
+            if(numero <2){
+                resultado.innerText=`${numero} não é um número primo`;
+            }
+            for(let i=2; i<=Math.sqrt(numero);i++){
+                if(numero %i ===0){
+                    resultado.innerText=`${numero} não é um número primo`;
+                    return;
+                }
+            }
+            resultado.innerText=`${numero} é um número primo`;
+        }            
+    </script>
+</body>
+</html>

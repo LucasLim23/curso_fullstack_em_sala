@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número aleatório</title>
+</head>
+<body>
+    <h1>Calcular soma</h1>
+    <p>Digite um número: </p>
+    <br>
+    <input type="number" id="numero" required>
+    <br>
+    <br>
+    <button type="button" onclick="numeroAleatorio()">Somar</button>
+    <p id="resultado"></p>
+    <script>
+        function numeroAleatorio(){
+            const numero = document.getElementById("numero").value;
+            let soma = 0;
+
+            for(let i = 1; i<=numero; i++){
+                soma += i;
+            }
+            document.getElementById("resultado").innerHTML=`A soma dos números de 1 a ${numero} é ${soma}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <p>Escolha um número para exibir a tabuada dele: </p>
+    <br>
+    <input type="number" id="numero" required>
+    <br>
+    <br>
+    <button type="button" onclick="tabuada()">Gerar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function tabuada(){
+            const numero = document.getElementById("numero").value;
+            const tabuada = document.getElementById("resultado");
+            
+
+            for(let i = 1; i<=10; i++){
+             document.getElementById("resultado").innerHTML += `${numero} x ${i} = ${numero * i}<br>`;
+            }
+        }
+    </script>
+</body>
+</html>
